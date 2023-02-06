@@ -1,3 +1,7 @@
+:root {
+    /* --main- */
+}
+
 * {
     font-family: Roboto;
     font-size: 16pt;
@@ -8,13 +12,14 @@ body {
     height: 100vh;
     margin: 0;
     display: grid;
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: 300px 1fr;
 }
 
 .sidebar {
     height: 100vh;
     background-color: dodgerblue;
     display: grid;
+    grid-template-rows: auto 1fr;
     justify-content: start;
     align-content: start;
     overflow: auto;
@@ -28,7 +33,7 @@ body {
 
 .sidebar-items {
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 3fr;
     justify-items: start;
     justify-self: start;
 }
@@ -36,6 +41,7 @@ body {
 .sidebar-items > * {
     padding: 1em 0;
 }
+
 .logo,
 .logo-text {
     font-size: 1.5em;
@@ -43,4 +49,26 @@ body {
 
 .icon {
     justify-self: center;
+}
+
+.sidebar-footer {
+    display: grid;
+    justify-self: center;
+    align-self: end;
+    font-size: 12pt;
+    font-weight: normal;
+    padding-bottom: 1em;
+}
+
+.main {
+    height: 100vh;
+}
+
+.main-header {
+    background-color: #ffffff;
+    box-shadow: 0 8px 8px lightgrey;
+}
+
+.main-body {
+    background-color: blue;
 }
