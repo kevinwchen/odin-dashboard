@@ -1,6 +1,7 @@
 :root {
     --main-header-height: 18vh;
     --theme-color: #1f8fff;
+    --box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -75,7 +76,7 @@ body {
 .header-top {
     display: grid;
     grid-template-areas: "search profile";
-    padding: 0.5em;
+    padding: 0.5em 3em;
 }
 
 .top-search-container {
@@ -95,7 +96,8 @@ body {
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: 1fr auto;
-    padding: 0.5em;
+    padding: 0.5em 3em;
+    gap: 1em;
 }
 
 .bot-profile-container {
@@ -120,6 +122,7 @@ body {
 .name-large {
     font-size: 1.5em;
     font-weight: 600;
+    white-space: nowrap;
 }
 
 .bot-buttons-container {
@@ -134,8 +137,8 @@ body {
 }
 
 .header-button > button {
-    padding: 0.25em 1.5em;
-    border-radius: 1em;
+    padding: 0.5em 1.5em;
+    border-radius: 2em;
     border-color: transparent;
     color: #ffffff;
     background-color: var(--theme-color);
@@ -150,7 +153,7 @@ body {
     grid-template-columns: 2fr 1fr;
     grid-template-areas: "projects announcements" "projects trending";
     gap: 1em;
-    box-shadow: inset 0 8px 8px #b7b7b7;
+    box-shadow: inset var(--box-shadow);
 }
 
 .content-header {
@@ -162,8 +165,42 @@ body {
     padding: 1em;
 }
 
-.projects {
+.projects,
+.announcements,
+.trending {
     grid-area: projects;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 0.5em;
+}
+
+.project-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 200px;
+    gap: 1em;
+}
+
+.project-card {
+    display: grid;
+    grid-template-rows: auto 0.8fr auto;
+    align-items: start;
+    background-color: #ffffff;
+    padding: 1.5em 1em 1em 1em;
+    border-radius: 0.5em;
+    box-shadow: inset 8px 0 0 0 #1f8fff, var(--box-shadow);
+}
+
+.project-card-body {
+    font-size: 0.8em;
+}
+
+.project-card-share {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 0.5em;
+    justify-content: end;
+    justify-items: center;
 }
 
 .announcements {
