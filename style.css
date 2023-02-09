@@ -152,7 +152,7 @@ body {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 2fr 1fr;
     grid-template-areas: "projects announcements" "projects trending";
-    gap: 1em;
+    gap: 0.5em;
     box-shadow: inset var(--box-shadow);
 }
 
@@ -191,6 +191,10 @@ body {
     box-shadow: inset 8px 0 0 0 #1f8fff, var(--box-shadow);
 }
 
+.project-card-header {
+    font-weight: 600;
+}
+
 .project-card-body {
     font-size: 0.8em;
 }
@@ -205,6 +209,35 @@ body {
 
 .announcements {
     grid-area: announcements;
+}
+
+.announcement-grid-container,
+.trending-grid-container {
+    display: grid;
+    background-color: #ffffff;
+    padding: 0.5em;
+    gap: 0;
+    border-radius: 0.5em;
+    box-shadow: var(--box-shadow);
+}
+
+.announce-card {
+    display: grid;
+    padding: 0.5em 1em;
+}
+
+.announce-card-title {
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+.announce-card-body {
+    font-size: 0.6em;
+}
+
+hr {
+    width: 90%;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .trending {
