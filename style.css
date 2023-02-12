@@ -1,8 +1,13 @@
 :root {
-    --main-header-height: 18vh;
+    --main-header-height: 180px;
     --theme-color: #1f8fff;
+    --project-card-color: #7dd3fc;
     --box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
     --description-color: rgba(0, 0, 0, 0.6);
+    --logo-icon-height: 2.5em;
+    --side-icon-height: 1.5em;
+    --header-icon-height: 1.5em;
+    --project-card-icon-height: 1.5em;
 }
 
 * {
@@ -39,19 +44,30 @@ body {
     grid-template-columns: 1fr 3fr;
     justify-items: start;
     justify-self: start;
+    column-gap: 0.5em;
 }
 
 .sidebar-items > * {
     padding: 1em 0;
+    align-self: center;
 }
 
-.logo,
 .logo-text {
     font-size: 1.5em;
 }
 
-.icon {
+.logo-icon,
+.side-icon {
+    fill: #ffffff;
     justify-self: center;
+}
+
+.logo-icon {
+    height: var(--logo-icon-height);
+}
+
+.side-icon {
+    height: var(--side-icon-height);
 }
 
 .sidebar-footer {
@@ -84,6 +100,26 @@ body {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 1em;
+}
+
+.search-icon,
+.noti-icon {
+    height: var(--header-icon-height);
+    align-self: center;
+}
+
+.search-bar {
+    height: 1em;
+    border-radius: 1em;
+    align-self: center;
+    padding: 0.5em 1em;
+    background-color: rgba(129, 192, 255, 0.271);
+}
+
+.search-bar,
+.search-bar:focus {
+    border: none;
+    outline: none;
 }
 
 .top-profile-container {
@@ -119,8 +155,7 @@ body {
 .profile-pic-large {
     grid-area: profile;
     height: 4em;
-    width: 4em;
-    border-radius: 50%;
+    border-radius: 25%;
 }
 
 .greeting {
@@ -197,7 +232,7 @@ body {
     background-color: #ffffff;
     padding: 1.5em 1em 1em 1em;
     border-radius: 0.5em;
-    box-shadow: inset 8px 0 0 0 #1f8fff, var(--box-shadow);
+    box-shadow: inset 8px 0 0 0 var(--project-card-color), var(--box-shadow);
 }
 
 .project-card-header {
@@ -209,12 +244,16 @@ body {
     color: var(--description-color);
 }
 
-.project-card-share {
+.project-card-buttons {
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 0.5em;
     justify-content: end;
     justify-items: center;
+}
+
+.project-card-buttons > * {
+    height: var(--project-card-icon-height);
 }
 
 .announcements {
